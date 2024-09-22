@@ -14,8 +14,8 @@ public class GrayScale {
 
   public static void main(String[] args) {
 
-    String inputPath = "C:\\Dev\\icons\\road-sign.png";
-    String outputPath = "C:\\Dev\\icons\\gray-road-sign.png";
+    String inputPath = "C:\\Dev\\icons\\anime.jpg";
+    String outputPath = "C:\\Dev\\icons\\gray-anime.png";
 
     BufferedImage img = null;
     File f;
