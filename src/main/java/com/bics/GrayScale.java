@@ -9,28 +9,13 @@ import javax.imageio.ImageIO;
  * The GrayScale class provides functionality to convert a color image to grayscale using the luminosity method. The
  * luminosity method calculates the grayscale value by applying specific weights to the red, green, and blue components
  * of each pixel.
- * .
- * The formula used for calculating the grayscale value is: gray = 0.21 * red + 0.72 * green + 0.07 * blue
- * .
- * This formula works because the human eye perceives green more strongly than red, and red more strongly than blue. The
- * weights (0.21, 0.72, 0.07) are chosen to reflect the relative luminance of each color component as perceived by the
- * human eye.
- * .
- * This class reads an image from a file, processes each pixel to convert it to grayscale, and writes the resulting
- * image to a new file.
- * .
- * Usage: - Specify the input and output file paths. - Run the main method to perform the conversion.
- * .
- * Author: Rohit Kori
- * Version: 1.0
  */
-
 public class GrayScale {
 
   public static void main(String[] args) {
 
-    String inputPath = "C:\\Dev\\icons\\road-sign.png";
-    String outputPath = "C:\\Dev\\icons\\gray-road-sign.png";
+    String inputPath = "C:\\Dev\\icons\\rohit.jpg";
+    String outputPath = "C:\\Dev\\icons\\gray-rohit.png";
 
     BufferedImage img = null;
     File f;
@@ -60,8 +45,8 @@ public class GrayScale {
       int g = (p >> 8) & 0xff;
       int b = p & 0xff;
 
-      // calculate luminosity
-      int gray = (int) (0.21 * r + 0.72 * g + 0.07 * b);
+      // calculate luminosity, adjust the weights if needed
+      int gray = (int) (0.15 * r + 0.60 * g + 0.25 * b);
 
       // replace RGB value with gray
       p = (a << 24) | (gray << 16) | (gray << 8) | gray;
