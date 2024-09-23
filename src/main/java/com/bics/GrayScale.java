@@ -14,7 +14,7 @@ public class GrayScale {
 
   public static void main(String[] args) {
 
-    String inputPath = "C:\\Dev\\icons\\anime.jpg";
+    String inputPath = "C:\\Dev\\icons\\anime.png";
     String outputPath = "C:\\Dev\\icons\\gray-anime.png";
 
     BufferedImage img = null;
@@ -46,13 +46,15 @@ public class GrayScale {
       int b = p & 0xff;
 
       // calculate luminosity, adjust the weights if needed
-      int gray = (int) (0.15 * r + 0.60 * g + 0.25 * b);
+      int gray = (int) (0.21 * r + 0.72 * g + 0.07 * b);
 
       // replace RGB value with gray
       p = (a << 24) | (gray << 16) | (gray << 8) | gray;
 
       pixels[i] = p;
     }
+
+    // set the new pixels array
     img.setRGB(0, 0, width, height, pixels, 0, width);
 
     // write image
